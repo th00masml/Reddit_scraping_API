@@ -12,4 +12,11 @@ subreddit = reddit.subreddit('ArtificialInteligence')
 hot_ai = subreddit.hot(limit=10)
 
 for submission in hot_ai:
-    print(submission.title)
+    if not submission.stickied:
+        # Prints just title
+        print("Simple title: ", submission.title)
+        # Prints more specific informations
+        print("Specific informations: ", 'Title: {}, ups: {}, downs: {}, Have we visited?: {}'.format(submission.title,
+                                                                           submission.ups,
+                                                                           submission.downs,
+                                                                           submission.visited))

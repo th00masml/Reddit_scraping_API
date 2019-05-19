@@ -20,3 +20,19 @@ for submission in hot_ai:
                                                                            submission.ups,
                                                                            submission.downs,
                                                                            submission.visited))
+        
+          """ ADD COMMENTS PARSING """
+        
+        comments = submission.comments
+        for comment in comments:
+            print('COMMENT:', comment.body)
+            if len(comment.replies) > 0:
+                for reply in comment.replies:
+                    print('REPLY:', reply)
+                    if len(comment.replies) == 0:
+                        print (40*'*')
+                    else:
+                        print("\t"+reply.body)
+                        print (40*'*')
+
+        
